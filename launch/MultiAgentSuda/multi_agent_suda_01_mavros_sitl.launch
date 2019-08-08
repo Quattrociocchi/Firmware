@@ -7,7 +7,7 @@
     <arg name="vehicle" default="iris"/>
     <!-- Change the following line in order to change the world being generated -->
     <!-- <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/> -->
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/shield_05.world"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/test_zone.sdf"/>
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>
     <arg name="debug" default="false"/>
@@ -28,8 +28,8 @@
         <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
         <!-- PX4 SITL and vehicle spawn -->
         <include file="$(find px4)/launch/single_vehicle_spawn.launch">
-            <arg name="x" value="4.5"/>
-            <arg name="y" value="2.5"/>
+            <arg name="x" value="-0.9677"/>
+            <arg name="y" value="9.5"/>
             <arg name="z" value="0"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
@@ -54,8 +54,8 @@
         <arg name="fcu_url" default="udp://:14541@localhost:14559"/>
         <!-- PX4 SITL and vehicle spawn -->
         <include file="$(find px4)/launch/single_vehicle_spawn.launch">
-            <arg name="x" value="6"/>
-            <arg name="y" value="0"/>
+            <arg name="x" value="-8.7097"/>
+            <arg name="y" value="-2.5"/>
             <arg name="z" value="0"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
@@ -80,8 +80,8 @@
         <arg name="fcu_url" default="udp://:14542@localhost:14561"/>
         <!-- PX4 SITL and vehicle spawn -->
         <include file="$(find px4)/launch/single_vehicle_spawn.launch">
-            <arg name="x" value="8.7"/>
-            <arg name="y" value="2.5"/>
+            <arg name="x" value="9.6774"/>
+            <arg name="y" value="-16.5"/>
             <arg name="z" value="0"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
@@ -100,3 +100,62 @@
         </include>
     </group>
 </launch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

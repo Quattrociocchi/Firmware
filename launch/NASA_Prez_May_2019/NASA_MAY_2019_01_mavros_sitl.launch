@@ -6,8 +6,7 @@
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
     <!-- Change the following line in order to change the world being generated -->
-    <!-- <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/> -->
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/shield_05.world"/>
+    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/NASA_MAY_2019.world"/>
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>
     <arg name="debug" default="false"/>
@@ -21,6 +20,13 @@
         <arg name="verbose" value="$(arg verbose)"/>
         <arg name="paused" value="$(arg paused)"/>
     </include>
+
+    <!-- SCALE FACTOR IS 3 -->
+    <!-- SCALE FACTOR IS 3 -->
+    <!-- SCALE FACTOR IS 3 -->
+    <!-- SCALE FACTOR IS 3 -->
+    <!-- SCALE FACTOR IS 3 -->
+
     <!-- UAV1 -->
     <group ns="uav1">
         <!-- MAVROS and vehicle configs -->        
@@ -28,8 +34,8 @@
         <arg name="fcu_url" default="udp://:14540@localhost:14557"/>
         <!-- PX4 SITL and vehicle spawn -->
         <include file="$(find px4)/launch/single_vehicle_spawn.launch">
-            <arg name="x" value="4.5"/>
-            <arg name="y" value="2.5"/>
+            <arg name="x" value="0"/>
+            <arg name="y" value="0"/>
             <arg name="z" value="0"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
@@ -54,8 +60,8 @@
         <arg name="fcu_url" default="udp://:14541@localhost:14559"/>
         <!-- PX4 SITL and vehicle spawn -->
         <include file="$(find px4)/launch/single_vehicle_spawn.launch">
-            <arg name="x" value="6"/>
-            <arg name="y" value="0"/>
+            <arg name="x" value="9.3"/>
+            <arg name="y" value="5.4"/>
             <arg name="z" value="0"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
@@ -80,8 +86,8 @@
         <arg name="fcu_url" default="udp://:14542@localhost:14561"/>
         <!-- PX4 SITL and vehicle spawn -->
         <include file="$(find px4)/launch/single_vehicle_spawn.launch">
-            <arg name="x" value="8.7"/>
-            <arg name="y" value="2.5"/>
+            <arg name="x" value="6"/>
+            <arg name="y" value="12"/>
             <arg name="z" value="0"/>
             <arg name="R" value="0"/>
             <arg name="P" value="0"/>
@@ -99,4 +105,115 @@
             <arg name="tgt_component" value="1"/>
         </include>
     </group>
+    <!-- UAV4 -->
+    <group ns="uav4">
+        <!-- MAVROS and vehicle configs -->        
+        <arg name="ID" value="4"/>
+        <arg name="fcu_url" default="udp://:14543@localhost:14563"/>
+        <!-- PX4 SITL and vehicle spawn -->
+        <include file="$(find px4)/launch/single_vehicle_spawn.launch">
+            <arg name="x" value="5.7"/>
+            <arg name="y" value="13.1"/>
+            <arg name="z" value="0"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="$(arg vehicle)"/>
+            <arg name="rcS" value="$(find px4)/posix-configs/SITL/init/$(arg est)/$(arg vehicle)_$(arg ID)"/>
+            <arg name="mavlink_udp_port" value="14566"/>
+            <arg name="ID" value="$(arg ID)"/>
+        </include>
+        <!-- MAVROS -->
+        <include file="$(find mavros)/launch/px4.launch">
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value=""/>
+            <arg name="tgt_system" value="$(arg ID)"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group>
+    <!-- UAV5 -->
+    <group ns="uav5">
+        <!-- MAVROS and vehicle configs -->        
+        <arg name="ID" value="5"/>
+        <arg name="fcu_url" default="udp://:14544@localhost:14565"/>
+        <!-- PX4 SITL and vehicle spawn -->
+        <include file="$(find px4)/launch/single_vehicle_spawn.launch">
+            <arg name="x" value="6.6"/>
+            <arg name="y" value="12.6"/>
+            <arg name="z" value="0"/>
+            <arg name="R" value="0"/>
+            <arg name="P" value="0"/>
+            <arg name="Y" value="0"/>
+            <arg name="vehicle" value="$(arg vehicle)"/>
+            <arg name="rcS" value="$(find px4)/posix-configs/SITL/init/$(arg est)/$(arg vehicle)_$(arg ID)"/>
+            <arg name="mavlink_udp_port" value="14568"/>
+            <arg name="ID" value="$(arg ID)"/>
+        </include>
+        <!-- MAVROS -->
+        <include file="$(find mavros)/launch/px4.launch">
+            <arg name="fcu_url" value="$(arg fcu_url)"/>
+            <arg name="gcs_url" value=""/>
+            <arg name="tgt_system" value="$(arg ID)"/>
+            <arg name="tgt_component" value="1"/>
+        </include>
+    </group>
 </launch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
